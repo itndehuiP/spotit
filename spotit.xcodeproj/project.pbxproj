@@ -160,6 +160,9 @@
 		A0C4F9A52650F3EC0030CD1C /* spotit WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A0C4F9E22651A5EF0030CD1C /* Logic */,
+				A0C4F9E12651A5CA0030CD1C /* Views */,
+				A0C4F9E02651A5C00030CD1C /* Models */,
 				A0C4F9A62650F3EC0030CD1C /* spotitApp.swift */,
 				A0C4F9A82650F3EC0030CD1C /* ContentView.swift */,
 				A0C4F9AA2650F3EC0030CD1C /* NotificationController.swift */,
@@ -197,6 +200,27 @@
 				A0C4F9CC2650F3ED0030CD1C /* Info.plist */,
 			);
 			path = spotitUITests;
+			sourceTree = "<group>";
+		};
+		A0C4F9E02651A5C00030CD1C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A0C4F9E12651A5CA0030CD1C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0C4F9E22651A5EF0030CD1C /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
