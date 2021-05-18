@@ -43,9 +43,11 @@ extension ButtonsRow {
 struct ButtonsRow_Previews: PreviewProvider {
     static var previews: some View {
         ButtonsRow(leftOption: OptionModel(icon: Icon.bell,
+                                           iconColor: .two,
                                            backColor: .four,
                                            borderColor: .three),
                    rightOption: OptionModel(icon: Icon.flame,
+                                            iconColor: .five,
                                             backColor: .two,
                                             borderColor: .three),
                    optionWidth: 100)

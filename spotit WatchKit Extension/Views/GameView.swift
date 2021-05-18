@@ -12,39 +12,50 @@ struct GameView: View {
     
     var body: some View {
         GeometryReader { geo in
-            VStack {
-                topRow(geoSize: geo.size.width)
-                centerView(geoSize: geo.size.width)
-                bottomRow(geoSize: geo.size.width)
+            ZStack(alignment: .center) {
+                topRow(geoHeight: geo.size.height)
+                centerView(geoHeight: geo.size.height)
+                bottomRow(geoHeight: geo.size.height)
             }
             .padding()
+            .frame(maxHeight: .infinity)
         }
     }
 }
 
 extension GameView {
-    private func centerView(geoSize: CGFloat) -> some View {
+    private func centerView(geoHeight: CGFloat) -> some View {
         Group {
             if let option = logic.correctOption {
-                OptionButton(option: option, width: geoSize / 4)
+                OptionButton(option: option, width: optionSize(big: true, geoHeight: geoHeight))
             }
         }
     }
     
-    private func topRow(geoSize: CGFloat) -> some View {
-        ButtonsRow(leftOption: logic.option(for: 0),
-                   rightOption: logic.option(for: 1),
-                   optionWidth: optionSize(geoWidth: geoSize))
+    private func topRow(geoHeight: CGFloat) -> some View {
+        VStack {
+            ButtonsRow(leftOption: logic.option(for: 0),
+                       rightOption: logic.option(for: 1),
+                       optionWidth: optionSize(big: false, geoHeight: geoHeight))
+            Spacer()
+        }
     }
     
-    private func bottomRow(geoSize: CGFloat) -> some View {
-        ButtonsRow(leftOption: logic.option(for: 2),
-                   rightOption: logic.option(for: 3),
-                   optionWidth: optionSize(geoWidth: geoSize))
+    private func bottomRow(geoHeight: CGFloat) -> some View {
+        VStack {
+            Spacer()
+            ButtonsRow(leftOption: logic.option(for: 2),
+                       rightOption: logic.option(for: 3),
+                       optionWidth: optionSize(big: false, geoHeight: geoHeight))
+        }
     }
     
-    private func optionSize(geoWidth: CGFloat) -> CGFloat {
-        geoWidth / 5
+    private func optionSize(big: Bool, geoHeight: CGFloat) -> CGFloat {
+        let unit = geoHeight / 10
+        if big {
+            return unit * 4
+        }
+        return unit * 2
     }
 }
 

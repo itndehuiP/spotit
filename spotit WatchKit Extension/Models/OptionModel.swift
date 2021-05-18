@@ -12,6 +12,7 @@ struct OptionModel {
         "\(icon)\(backColor.rawValue)\(borderColor.rawValue)"
     }
     var icon: String
+    var iconColor: StyleColor
     var backColor: StyleColor
     var borderColor: StyleColor
 }

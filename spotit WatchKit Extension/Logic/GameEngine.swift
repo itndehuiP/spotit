@@ -48,19 +48,30 @@ struct GameEngine {
     }
     
     private func createOption() -> OptionModel? {
-        guard let iconIndex = getRandomIndex(topIndex: (icons.count - 1)),
-              let backColorIndex = getRandomIndex(topIndex: (colors.count - 1)),
-              let borderColorIndex = getRandomIndex(topIndex: (colors.count - 1)) else {
+        let colorsTopIndex = colors.count - 1
+        guard let backColorIndex = getRandomIndex(topIndex: colorsTopIndex),
+              let iconColorIndex = getRandomIndex(topIndex: colorsTopIndex, different: backColorIndex),
+              let iconIndex = getRandomIndex(topIndex: (icons.count - 1)),
+              let borderColorIndex = getRandomIndex(topIndex: colorsTopIndex) else {
             return nil
         }
         return OptionModel(icon: icons[iconIndex],
+                    iconColor: colors[iconColorIndex],
                     backColor: colors[backColorIndex],
                     borderColor: colors[borderColorIndex])
     }
     
-    private func getRandomIndex(topIndex: Int) -> Int? {
+    private func getRandomIndex(topIndex: Int, different: Int? = nil) -> Int? {
         guard topIndex >= 0 else {
             return nil
+        }
+        let range = 0...topIndex
+        var randomValue = Int.random(in: range)
+        if let different = different, different >= 0, different <= topIndex, topIndex != 0 {
+            while randomValue == different {
+                randomValue = Int.random(in: range)
+            }
+            return randomValue
         }
         return Int.random(in: 0...topIndex)
     }

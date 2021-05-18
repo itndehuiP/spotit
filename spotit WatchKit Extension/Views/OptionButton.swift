@@ -14,6 +14,7 @@ struct OptionButton: View {
     var body: some View {
         ZStack {
             IconImage(systemIcon: option.icon,
+                      iconColor: option.iconColor,
                       backColor: option.backColor,
                       borderBolor: option.borderColor,
                       width: width)
@@ -24,6 +25,7 @@ struct OptionButton: View {
 struct IconButton_Previews: PreviewProvider {
     static var previews: some View {
         OptionButton(option: OptionModel(icon: Icon.crown,
+                                         iconColor: .two,
                                        backColor: .one,
                                        borderColor: .three),
                      width: 50)
