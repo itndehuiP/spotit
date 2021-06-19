@@ -8,7 +8,8 @@
 import Foundation
 
 struct GameEngine {
-    private let colors = StyleColor.allCases
+    private let highColors = HighColor.allCases
+    private let backColors = BackColor.allCases
     
     private let icons: [String] =
         [Icon.atom,
@@ -40,7 +41,6 @@ struct GameEngine {
                 continue
             }
             if !optionSet.contains(newOption) {
-                print(newOption)
                 optionSet.insert(newOption)
             }
         }
@@ -48,31 +48,25 @@ struct GameEngine {
     }
     
     private func createOption() -> OptionModel? {
-        let colorsTopIndex = colors.count - 1
-        guard let backColorIndex = getRandomIndex(topIndex: colorsTopIndex),
-              let iconColorIndex = getRandomIndex(topIndex: colorsTopIndex, different: backColorIndex),
+        let colorsTopIndex = highColors.count - 1
+        let backColorsTopIndex = backColors.count - 1
+        guard let backColorIndex = getRandomIndex(topIndex: backColorsTopIndex),
+              let iconColorIndex = getRandomIndex(topIndex: colorsTopIndex),
               let iconIndex = getRandomIndex(topIndex: (icons.count - 1)),
               let borderColorIndex = getRandomIndex(topIndex: colorsTopIndex) else {
             return nil
         }
         return OptionModel(icon: icons[iconIndex],
-                    iconColor: colors[iconColorIndex],
-                    backColor: colors[backColorIndex],
-                    borderColor: colors[borderColorIndex])
+                    iconColor: highColors[iconColorIndex],
+                    backColor: backColors[backColorIndex],
+                    borderColor: highColors[borderColorIndex])
     }
     
-    private func getRandomIndex(topIndex: Int, different: Int? = nil) -> Int? {
+    private func getRandomIndex(topIndex: Int) -> Int? {
         guard topIndex >= 0 else {
             return nil
         }
         let range = 0...topIndex
-        var randomValue = Int.random(in: range)
-        if let different = different, different >= 0, different <= topIndex, topIndex != 0 {
-            while randomValue == different {
-                randomValue = Int.random(in: range)
-            }
-            return randomValue
-        }
-        return Int.random(in: 0...topIndex)
+        return Int.random(in: range)
     }
 }

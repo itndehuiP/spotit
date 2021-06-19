@@ -44,7 +44,7 @@ struct ButtonsRow_Previews: PreviewProvider {
     static var previews: some View {
         ButtonsRow(leftOption: OptionModel(icon: Icon.bell,
                                            iconColor: .two,
-                                           backColor: .four,
+                                           backColor: .one,
                                            borderColor: .three),
                    rightOption: OptionModel(icon: Icon.flame,
                                             iconColor: .five,

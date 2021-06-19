@@ -9,9 +9,9 @@ import SwiftUI
 
 struct IconImage: View {
     let systemIcon: String
-    let iconColor: StyleColor
-    let backColor: StyleColor
-    let borderBolor: StyleColor
+    let iconColor: HighColor
+    let backColor: BackColor
+    let borderBolor: HighColor
     let width: CGFloat
     
     var body: some View {
@@ -30,30 +30,30 @@ extension IconImage {
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(width: width, height: width, alignment: .center)
-        .foregroundColor(color(iconColor))
+        .foregroundColor(color(iconColor.rawValue))
     }
     
     private var circleView: some View {
         Circle()
-            .foregroundColor(color(backColor))
+        .foregroundColor(color(backColor.rawValue))
     }
     
     private var backCircleView: some View {
         Circle()
-            .stroke(lineWidth: 2)
-            .foregroundColor(color(borderBolor))
+        .stroke(lineWidth: 2)
+            .foregroundColor(color(borderBolor.rawValue))
     }
     
-    private func color(_ color: StyleColor) -> Color {
-        Color(color.rawValue)
+    private func color(_ color: String) -> Color {
+        Color(color)
     }
 }
 struct IconImage_Previews: PreviewProvider {
     static var previews: some View {
         IconImage(systemIcon: Icon.cloudHail,
-                  iconColor: .one,
-                  backColor: .four,
-                  borderBolor: .three,
+                  iconColor: HighColor.one,
+                  backColor: BackColor.one,
+                  borderBolor: HighColor.three,
                   width: 50)
     }
 }

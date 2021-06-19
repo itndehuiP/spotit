@@ -9,12 +9,12 @@ import Foundation
 
 struct OptionModel {
     var id: String {
-        "\(icon)\(backColor.rawValue)\(borderColor.rawValue)"
+        "\(icon)\(iconColor)\(backColor)\(borderColor)"
     }
     var icon: String
-    var iconColor: StyleColor
-    var backColor: StyleColor
-    var borderColor: StyleColor
+    var iconColor: HighColor
+    var backColor: BackColor
+    var borderColor: HighColor
 }
 
 extension OptionModel: Equatable, Hashable {

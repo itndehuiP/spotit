@@ -24,10 +24,10 @@ struct OptionButton: View {
 
 struct IconButton_Previews: PreviewProvider {
     static var previews: some View {
-        OptionButton(option: OptionModel(icon: Icon.crown,
-                                         iconColor: .two,
-                                       backColor: .one,
-                                       borderColor: .three),
+        OptionButton(option: OptionModel(icon: Icon.cloudHail,
+                                         iconColor: .four,
+                                         backColor: .three,
+                                         borderColor: .three),
                      width: 50)
     }
 }
