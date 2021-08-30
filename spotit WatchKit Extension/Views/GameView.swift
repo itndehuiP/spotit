@@ -12,50 +12,52 @@ struct GameView: View {
     
     var body: some View {
         GeometryReader { geo in
-            ZStack(alignment: .center) {
-                topRow(geoHeight: geo.size.height)
+            switch  logic.state {
+            case .presenting:
                 centerView(geoHeight: geo.size.height)
-                bottomRow(geoHeight: geo.size.height)
+            case .picking:
+                PickingView(logic: logic, size: geo.size)
+            case .finished:
+                newGame
+            case .newGame:
+                newGame
             }
-            .padding()
-            .frame(maxHeight: .infinity)
         }
     }
 }
 
 extension GameView {
+    private var newGame: some View {
+        ZStack(alignment: .center) {
+            Button("New game") {
+                logic.state = .presenting
+            }
+        }
+        .frame(maxHeight: .infinity)
+    }
+    
     private func centerView(geoHeight: CGFloat) -> some View {
-        Group {
+        ZStack(alignment: .center) {
             if let option = logic.correctOption {
-                OptionButton(option: option, width: optionSize(big: true, geoHeight: geoHeight))
+                OptionView(option: option, width: optionSize(big: true, geoHeight: geoHeight))
+                .onAppear {
+                    logic.runPresentation()
+                    withAnimation(.linear(duration: 5)) {
+                        logic.progress = 0.99
+                    }
+                }
+                .padding()
+                .overlay(GameProgressView(progress: logic.progress))
             }
         }
     }
     
-    private func topRow(geoHeight: CGFloat) -> some View {
-        VStack {
-            ButtonsRow(leftOption: logic.option(for: 0),
-                       rightOption: logic.option(for: 1),
-                       optionWidth: optionSize(big: false, geoHeight: geoHeight))
-            Spacer()
-        }
-    }
-    
-    private func bottomRow(geoHeight: CGFloat) -> some View {
-        VStack {
-            Spacer()
-            ButtonsRow(leftOption: logic.option(for: 2),
-                       rightOption: logic.option(for: 3),
-                       optionWidth: optionSize(big: false, geoHeight: geoHeight))
-        }
-    }
-    
     private func optionSize(big: Bool, geoHeight: CGFloat) -> CGFloat {
-        let unit = geoHeight / 10
         if big {
-            return unit * 4
+            return (geoHeight / 5) * 3
+        } else {
+            return (geoHeight / 4)
         }
-        return unit * 2
     }
 }
 

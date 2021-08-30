@@ -7,24 +7,22 @@
 
 import SwiftUI
 
-struct OptionButton: View {
+struct OptionView: View {
     let option: OptionModel
-    let width: CGFloat
+    let width: CGFloat?
     
     var body: some View {
-        ZStack {
-            IconImage(systemIcon: option.icon,
-                      iconColor: option.iconColor,
-                      backColor: option.backColor,
-                      borderBolor: option.borderColor,
-                      width: width)
-        }
+        IconImage(systemIcon: option.icon,
+                  iconColor: option.iconColor,
+                  backColor: option.backColor,
+                  borderBolor: option.borderColor,
+                  width: width)
     }
 }
 
-struct IconButton_Previews: PreviewProvider {
+struct OptionView_Previews: PreviewProvider {
     static var previews: some View {
-        OptionButton(option: OptionModel(icon: Icon.cloudHail,
+        OptionView(option: OptionModel(icon: Icon.cloudHail,
                                          iconColor: .four,
                                          backColor: .three,
                                          borderColor: .three),

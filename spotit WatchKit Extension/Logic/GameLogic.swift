@@ -11,7 +11,10 @@ import os.log
 class GameLogic: ObservableObject {
     @Published var options: [OptionModel] = []
     @Published var selectedOption: OptionModel?
+    @Published var progress = 0.0
+    @Published var state: GameState = .newGame
     var correctIndex: Int?
+    let gameDuration = 5
     
     init() {
         newGame()
@@ -26,9 +29,9 @@ class GameLogic: ObservableObject {
     }
     
     func newGame() {
-        let engine = GameEngine()
+        let engine = GameEngine(options: 8)
         let options = engine.createOptions()
-        guard options.count == 4 else {
+        guard options.count == 8 else {
             Logger().critical("GameLogic newGame options creation failed")
             return
         }
@@ -42,6 +45,12 @@ class GameLogic: ObservableObject {
             return nil
         }
         return options[correctIndex]
+    }
+    
+    func runPresentation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.state = .picking
+        }
     }
 }
 

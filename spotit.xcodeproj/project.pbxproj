@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A09C8D3126D1B85B00ACF352 /* PickingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09C8D3026D1B85B00ACF352 /* PickingView.swift */; };
+		A09C8D3326D1C4E800ACF352 /* LayerDistributionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09C8D3226D1C4E800ACF352 /* LayerDistributionInfo.swift */; };
+		A09C8D3826D3396300ACF352 /* FactorPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09C8D3726D3396300ACF352 /* FactorPair.swift */; };
 		A0A4DB17267585E900B7BBD6 /* BackColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A4DB16267585E900B7BBD6 /* BackColor.swift */; };
+		A0A4DB19267DBD7200B7BBD6 /* GameProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A4DB18267DBD7200B7BBD6 /* GameProgressView.swift */; };
+		A0A4DB1B267DE26600B7BBD6 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A4DB1A267DE26600B7BBD6 /* GameState.swift */; };
+		A0A4DB1D267DED4A00B7BBD6 /* GridLayerDistributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A4DB1C267DED4A00B7BBD6 /* GridLayerDistributor.swift */; };
 		A0C4F9962650F3EB0030CD1C /* spotit WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A0C4F9952650F3EB0030CD1C /* spotit WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A0C4F99B2650F3EC0030CD1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C4F99A2650F3EC0030CD1C /* Assets.xcassets */; };
 		A0C4F9A22650F3EC0030CD1C /* spotit WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0C4F9A12650F3EC0030CD1C /* spotit WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -21,10 +27,9 @@
 		A0C4F9C02650F3ED0030CD1C /* spotitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C4F9BF2650F3ED0030CD1C /* spotitTests.swift */; };
 		A0C4F9CB2650F3ED0030CD1C /* spotitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C4F9CA2650F3ED0030CD1C /* spotitUITests.swift */; };
 		A0C4F9E62651BF6A0030CD1C /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C4F9E52651BF6A0030CD1C /* Icon.swift */; };
-		A0C4F9E82651F50D0030CD1C /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C4F9E72651F50D0030CD1C /* OptionButton.swift */; };
+		A0C4F9E82651F50D0030CD1C /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C4F9E72651F50D0030CD1C /* OptionView.swift */; };
 		A0C4F9EA2651F5290030CD1C /* IconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C4F9E92651F5290030CD1C /* IconImage.swift */; };
 		A0C4F9EC2651FDDF0030CD1C /* HighColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C4F9EB2651FDDF0030CD1C /* HighColor.swift */; };
-		A0C4F9EE26521A950030CD1C /* ButtonsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C4F9ED26521A950030CD1C /* ButtonsRow.swift */; };
 		A0C4F9F026521D100030CD1C /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C4F9EF26521D100030CD1C /* OptionModel.swift */; };
 		A0C4F9F22652200B0030CD1C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C4F9F12652200B0030CD1C /* GameView.swift */; };
 		A0C4F9F4265222FF0030CD1C /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C4F9F3265222FF0030CD1C /* GameLogic.swift */; };
@@ -89,7 +94,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A09C8D3026D1B85B00ACF352 /* PickingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickingView.swift; sourceTree = "<group>"; };
+		A09C8D3226D1C4E800ACF352 /* LayerDistributionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerDistributionInfo.swift; sourceTree = "<group>"; };
+		A09C8D3726D3396300ACF352 /* FactorPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorPair.swift; sourceTree = "<group>"; };
 		A0A4DB16267585E900B7BBD6 /* BackColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackColor.swift; sourceTree = "<group>"; };
+		A0A4DB18267DBD7200B7BBD6 /* GameProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgressView.swift; sourceTree = "<group>"; };
+		A0A4DB1A267DE26600B7BBD6 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		A0A4DB1C267DED4A00B7BBD6 /* GridLayerDistributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayerDistributor.swift; sourceTree = "<group>"; };
 		A0C4F9912650F3EB0030CD1C /* spotit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spotit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C4F9952650F3EB0030CD1C /* spotit WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "spotit WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C4F99A2650F3EC0030CD1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,10 +122,9 @@
 		A0C4F9CA2650F3ED0030CD1C /* spotitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotitUITests.swift; sourceTree = "<group>"; };
 		A0C4F9CC2650F3ED0030CD1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0C4F9E52651BF6A0030CD1C /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
-		A0C4F9E72651F50D0030CD1C /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
+		A0C4F9E72651F50D0030CD1C /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
 		A0C4F9E92651F5290030CD1C /* IconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
 		A0C4F9EB2651FDDF0030CD1C /* HighColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighColor.swift; sourceTree = "<group>"; };
-		A0C4F9ED26521A950030CD1C /* ButtonsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsRow.swift; sourceTree = "<group>"; };
 		A0C4F9EF26521D100030CD1C /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
 		A0C4F9F12652200B0030CD1C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		A0C4F9F3265222FF0030CD1C /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
@@ -232,6 +242,9 @@
 				A0C4F9EF26521D100030CD1C /* OptionModel.swift */,
 				A0C4F9F5265226710030CD1C /* Extension+Array.swift */,
 				A0A4DB16267585E900B7BBD6 /* BackColor.swift */,
+				A0A4DB1A267DE26600B7BBD6 /* GameState.swift */,
+				A09C8D3226D1C4E800ACF352 /* LayerDistributionInfo.swift */,
+				A09C8D3726D3396300ACF352 /* FactorPair.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,10 +252,11 @@
 		A0C4F9E12651A5CA0030CD1C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A0C4F9E72651F50D0030CD1C /* OptionButton.swift */,
+				A0C4F9E72651F50D0030CD1C /* OptionView.swift */,
 				A0C4F9E92651F5290030CD1C /* IconImage.swift */,
-				A0C4F9ED26521A950030CD1C /* ButtonsRow.swift */,
 				A0C4F9F12652200B0030CD1C /* GameView.swift */,
+				A0A4DB18267DBD7200B7BBD6 /* GameProgressView.swift */,
+				A09C8D3026D1B85B00ACF352 /* PickingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +266,7 @@
 			children = (
 				A0C4F9F3265222FF0030CD1C /* GameLogic.swift */,
 				A0C4F9F72652367E0030CD1C /* GameEngine.swift */,
+				A0A4DB1C267DED4A00B7BBD6 /* GridLayerDistributor.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -272,6 +287,10 @@
 				A0C4F9982650F3EB0030CD1C /* PBXTargetDependency */,
 			);
 			name = spotit;
+			packageProductDependencies = (
+				A0A4DB21268333C600B7BBD6 /* KeychainAccess */,
+				A0A4DB23268337A300B7BBD6 /* Sentry */,
+			);
 			productName = spotit;
 			productReference = A0C4F9912650F3EB0030CD1C /* spotit.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
@@ -383,6 +402,10 @@
 				Base,
 			);
 			mainGroup = A0C4F98A2650F3EB0030CD1C;
+			packageReferences = (
+				A0A4DB20268333C600B7BBD6 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				A0A4DB22268337A300B7BBD6 /* XCRemoteSwiftPackageReference "https-github.com-getsentry-sentry-cocoa" */,
+			);
 			productRefGroup = A0C4F9922650F3EB0030CD1C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -442,11 +465,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A09C8D3126D1B85B00ACF352 /* PickingView.swift in Sources */,
 				A0C4F9E62651BF6A0030CD1C /* Icon.swift in Sources */,
 				A0C4F9AB2650F3EC0030CD1C /* NotificationController.swift in Sources */,
-				A0C4F9E82651F50D0030CD1C /* OptionButton.swift in Sources */,
+				A0A4DB19267DBD7200B7BBD6 /* GameProgressView.swift in Sources */,
+				A0C4F9E82651F50D0030CD1C /* OptionView.swift in Sources */,
+				A09C8D3326D1C4E800ACF352 /* LayerDistributionInfo.swift in Sources */,
 				A0C4F9A92650F3EC0030CD1C /* ContentView.swift in Sources */,
-				A0C4F9EE26521A950030CD1C /* ButtonsRow.swift in Sources */,
+				A0A4DB1D267DED4A00B7BBD6 /* GridLayerDistributor.swift in Sources */,
+				A09C8D3826D3396300ACF352 /* FactorPair.swift in Sources */,
 				A0C4F9F026521D100030CD1C /* OptionModel.swift in Sources */,
 				A0C4F9AF2650F3EC0030CD1C /* ComplicationController.swift in Sources */,
 				A0C4F9A72650F3EC0030CD1C /* spotitApp.swift in Sources */,
@@ -454,6 +481,7 @@
 				A0C4F9AD2650F3EC0030CD1C /* NotificationView.swift in Sources */,
 				A0A4DB17267585E900B7BBD6 /* BackColor.swift in Sources */,
 				A0C4F9F82652367E0030CD1C /* GameEngine.swift in Sources */,
+				A0A4DB1B267DE26600B7BBD6 /* GameState.swift in Sources */,
 				A0C4F9F4265222FF0030CD1C /* GameLogic.swift in Sources */,
 				A0C4F9F22652200B0030CD1C /* GameView.swift in Sources */,
 				A0C4F9EC2651FDDF0030CD1C /* HighColor.swift in Sources */,
@@ -877,6 +905,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A0A4DB20268333C600B7BBD6 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.2;
+			};
+		};
+		A0A4DB22268337A300B7BBD6 /* XCRemoteSwiftPackageReference "https-github.com-getsentry-sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/The-Actual-Damien/https-github.com-getsentry-sentry-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A0A4DB21268333C600B7BBD6 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0A4DB20268333C600B7BBD6 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		A0A4DB23268337A300B7BBD6 /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0A4DB22268337A300B7BBD6 /* XCRemoteSwiftPackageReference "https-github.com-getsentry-sentry-cocoa" */;
+			productName = Sentry;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A0C4F98B2650F3EB0030CD1C /* Project object */;
 }

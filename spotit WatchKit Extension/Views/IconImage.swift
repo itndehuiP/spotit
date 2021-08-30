@@ -12,20 +12,34 @@ struct IconImage: View {
     let iconColor: HighColor
     let backColor: BackColor
     let borderBolor: HighColor
-    let width: CGFloat
+    let width: CGFloat?
     
     var body: some View {
         ZStack {
-            imageView
+            circleView
+            Group {
+                if let width = width {
+                    sizedImageView(width: width)
+                } else {
+                    adaptableImageView
+                }
+            }
+            .padding()
         }
-        .padding()
         .overlay(backCircleView)
-        .background(circleView)
     }
 }
 
 extension IconImage {
-    private var imageView: some View {
+    private var adaptableImageView: some View {
+        Image(systemName: systemIcon)
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .frame(maxWidth: .infinity)
+        .foregroundColor(color(iconColor.rawValue))
+    }
+    
+    private func sizedImageView(width: CGFloat) -> some View {
         Image(systemName: systemIcon)
         .resizable()
         .aspectRatio(contentMode: .fit)
@@ -41,7 +55,7 @@ extension IconImage {
     private var backCircleView: some View {
         Circle()
         .stroke(lineWidth: 2)
-            .foregroundColor(color(borderBolor.rawValue))
+        .foregroundColor(color(borderBolor.rawValue))
     }
     
     private func color(_ color: String) -> Color {

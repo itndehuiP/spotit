@@ -10,6 +10,7 @@ import Foundation
 struct GameEngine {
     private let highColors = HighColor.allCases
     private let backColors = BackColor.allCases
+    let options: Int
     
     private let icons: [String] =
         [Icon.atom,
@@ -36,7 +37,7 @@ struct GameEngine {
     
     func createOptions() -> [OptionModel] {
         var optionSet: Set<OptionModel> = []
-        while optionSet.count < 4 {
+        while optionSet.count < options {
             guard let newOption = createOption() else {
                 continue
             }
